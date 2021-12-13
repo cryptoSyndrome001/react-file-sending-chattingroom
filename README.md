@@ -1,358 +1,61 @@
-Contribution: 2018-05-05 20:00
+# filedrop-web
 
-Contribution: 2018-05-05 20:01
+Easy WebRTC file transfer. [CLI tool is available here.](https://github.com/mat-sz/droplol)
 
-Contribution: 2018-05-05 20:02
+<p align="center">
+    <a href="https://drop.lol/">
+        <strong>Click here to open drop.lol.</strong>
+    </a>
+</p>
 
-Contribution: 2018-05-05 20:03
+<p align="center">
+    <a href="https://drop.lol/">
+        <img src="https://raw.githubusercontent.com/mat-sz/filedrop-web/master/filedrop.gif" alt="Screenshot">
+    </a>
+</p>
 
-Contribution: 2018-05-05 20:04
+## Self-hosting
 
-Contribution: 2018-05-05 20:05
+A docker-compose configuration is available in the [filedrop-docker](https://github.com/mat-sz/filedrop-docker) repository.
 
-Contribution: 2018-05-05 20:06
+Installation can be achieved without Docker as well:
 
-Contribution: 2018-05-07 20:00
+> First you need to clone, build and run [filedrop-ws](https://github.com/mat-sz/filedrop-ws) and a TURN server (like [coturn](https://github.com/coturn/coturn)), read the README in filedrop-ws for more information on configuration.
+>
+> Then you need to clone this project, point it to the WebSockets backend (filedrop-ws) (in .env.local), build it and place it on some static file server (I use nginx for that). I also use nginx to proxy the back end through it. [Here's a guide on how to achieve that.](https://www.nginx.com/blog/websocket-nginx/)
 
-Contribution: 2018-05-07 20:01
+### Environment variables
 
-Contribution: 2018-05-07 20:02
+The following variables are used in the build process:
 
-Contribution: 2018-05-07 20:03
+| Variable                       | Default value             | Description                                                                 |
+| ------------------------------ | ------------------------- | --------------------------------------------------------------------------- |
+| `REACT_APP_TITLE`              | `filedrop`                | Application title.                                                          |
+| `REACT_APP_SERVER`             | `ws://[hostname]:5000/ws` | WebSockets server location.                                                 |
+| `REACT_APP_USE_BROWSER_ROUTER` | `0`                       | `1` if you want the application to use BrowserRouter instead of HashRouter. |
+| `REACT_APP_ABUSE_EMAIL`        | null                      | E-mail to show in the Abuse section.                                        |
+| `REACT_APP_SHOW_CLI_TOOL_INFO` | `0`                       | `1` if you want to link to [droplol](https://github.com/mat-sz/droplol).    |
 
-Contribution: 2018-05-07 20:04
+## FAQ
 
-Contribution: 2018-05-07 20:05
+### What is the motivation behind the project?
 
-Contribution: 2018-05-07 20:06
+I didn't feel comfortable logging into my e-mail account on devices I don't own just to download an attachment and cloud services have extremely long URLs that aren't really easy to type.
 
-Contribution: 2018-05-07 20:07
+### Where do my files go after I send them through the service?
 
-Contribution: 2018-05-07 20:08
+To the other device. Sometimes the (encrypted, since WebRTC uses encryption by default) data goes through the TURN server I run. It's immediately discarded after being relayed. File metadata also is not saved.
 
-Contribution: 2018-05-07 20:09
+### Doesn't this exist already?
 
-Contribution: 2018-05-08 20:00
+While [ShareDrop](https://github.com/cowbell/sharedrop) and [SnapDrop](https://github.com/RobinLinus/snapdrop) are both excellent projects and most definitely exist, I felt the need to create my own version for a several reasons:
 
-Contribution: 2018-05-08 20:01
+- I wanted to build something using React.js and TypeScript.
+- ShareDrop doesn't work when the devices are on different networks but still behind NAT.
+- I didn't like the layout and design of both, I feel like the abstract design of FileDrop makes it easier to use.
+- I was not aware of these projects while I started working on this project.
+- ShareDrop's URLs are extremely long.
 
-Contribution: 2018-05-08 20:02
+### How is it related to the other projects you've mentioned?
 
-Contribution: 2018-05-08 20:03
-
-Contribution: 2018-05-08 20:04
-
-Contribution: 2018-05-08 20:05
-
-Contribution: 2018-05-08 20:06
-
-Contribution: 2018-05-08 20:07
-
-Contribution: 2018-05-08 20:08
-
-Contribution: 2018-05-11 20:00
-
-Contribution: 2018-05-11 20:01
-
-Contribution: 2018-05-11 20:02
-
-Contribution: 2018-05-11 20:03
-
-Contribution: 2018-05-12 20:00
-
-Contribution: 2018-05-12 20:01
-
-Contribution: 2018-05-12 20:02
-
-Contribution: 2018-05-12 20:03
-
-Contribution: 2018-05-12 20:04
-
-Contribution: 2018-05-12 20:05
-
-Contribution: 2018-05-12 20:06
-
-Contribution: 2018-05-12 20:07
-
-Contribution: 2018-05-12 20:08
-
-Contribution: 2018-05-13 20:00
-
-Contribution: 2018-05-13 20:01
-
-Contribution: 2018-05-13 20:02
-
-Contribution: 2018-05-13 20:03
-
-Contribution: 2018-05-13 20:04
-
-Contribution: 2018-05-13 20:05
-
-Contribution: 2018-05-13 20:06
-
-Contribution: 2018-05-13 20:07
-
-Contribution: 2018-05-13 20:08
-
-Contribution: 2018-05-13 20:09
-
-Contribution: 2018-05-13 20:10
-
-Contribution: 2018-05-15 20:00
-
-Contribution: 2018-05-15 20:01
-
-Contribution: 2018-05-15 20:02
-
-Contribution: 2018-05-15 20:03
-
-Contribution: 2018-05-15 20:04
-
-Contribution: 2018-05-15 20:05
-
-Contribution: 2018-05-15 20:06
-
-Contribution: 2018-05-16 20:00
-
-Contribution: 2018-05-16 20:01
-
-Contribution: 2018-05-16 20:02
-
-Contribution: 2018-05-16 20:03
-
-Contribution: 2018-05-16 20:04
-
-Contribution: 2018-05-16 20:05
-
-Contribution: 2018-05-16 20:06
-
-Contribution: 2018-05-16 20:07
-
-Contribution: 2018-05-17 20:00
-
-Contribution: 2018-05-17 20:01
-
-Contribution: 2018-05-17 20:02
-
-Contribution: 2018-05-17 20:03
-
-Contribution: 2018-05-18 20:00
-
-Contribution: 2018-05-18 20:01
-
-Contribution: 2018-05-18 20:02
-
-Contribution: 2018-05-18 20:03
-
-Contribution: 2018-05-19 20:00
-
-Contribution: 2018-05-19 20:01
-
-Contribution: 2018-05-19 20:02
-
-Contribution: 2018-05-19 20:03
-
-Contribution: 2018-05-19 20:04
-
-Contribution: 2018-05-19 20:05
-
-Contribution: 2018-05-19 20:06
-
-Contribution: 2018-05-20 20:00
-
-Contribution: 2018-05-20 20:01
-
-Contribution: 2018-05-20 20:02
-
-Contribution: 2018-05-20 20:03
-
-Contribution: 2018-05-21 20:00
-
-Contribution: 2018-05-21 20:01
-
-Contribution: 2018-05-21 20:02
-
-Contribution: 2018-05-21 20:03
-
-Contribution: 2018-05-21 20:04
-
-Contribution: 2018-05-21 20:05
-
-Contribution: 2018-05-21 20:06
-
-Contribution: 2018-05-21 20:07
-
-Contribution: 2018-05-21 20:08
-
-Contribution: 2018-05-21 20:09
-
-Contribution: 2018-05-22 20:00
-
-Contribution: 2018-05-22 20:01
-
-Contribution: 2018-05-22 20:02
-
-Contribution: 2018-05-22 20:03
-
-Contribution: 2018-05-22 20:04
-
-Contribution: 2018-05-22 20:05
-
-Contribution: 2018-05-22 20:06
-
-Contribution: 2018-05-22 20:07
-
-Contribution: 2018-05-22 20:08
-
-Contribution: 2018-05-22 20:09
-
-Contribution: 2018-05-23 20:00
-
-Contribution: 2018-05-23 20:01
-
-Contribution: 2018-05-23 20:02
-
-Contribution: 2018-05-23 20:03
-
-Contribution: 2018-05-23 20:04
-
-Contribution: 2018-05-23 20:05
-
-Contribution: 2018-05-23 20:06
-
-Contribution: 2018-05-23 20:07
-
-Contribution: 2018-05-24 20:00
-
-Contribution: 2018-05-24 20:01
-
-Contribution: 2018-05-24 20:02
-
-Contribution: 2018-05-24 20:03
-
-Contribution: 2018-05-24 20:04
-
-Contribution: 2018-05-25 20:00
-
-Contribution: 2018-05-25 20:01
-
-Contribution: 2018-05-25 20:02
-
-Contribution: 2018-05-25 20:03
-
-Contribution: 2018-05-25 20:04
-
-Contribution: 2018-05-25 20:05
-
-Contribution: 2018-05-26 20:00
-
-Contribution: 2018-05-26 20:01
-
-Contribution: 2018-05-26 20:02
-
-Contribution: 2018-05-26 20:03
-
-Contribution: 2018-05-27 20:00
-
-Contribution: 2018-05-27 20:01
-
-Contribution: 2018-05-27 20:02
-
-Contribution: 2018-05-27 20:03
-
-Contribution: 2018-05-27 20:04
-
-Contribution: 2018-05-27 20:05
-
-Contribution: 2018-05-27 20:06
-
-Contribution: 2018-05-27 20:07
-
-Contribution: 2018-05-27 20:08
-
-Contribution: 2018-05-27 20:09
-
-Contribution: 2018-05-27 20:10
-
-Contribution: 2018-05-27 20:11
-
-Contribution: 2018-05-28 20:00
-
-Contribution: 2018-05-28 20:01
-
-Contribution: 2018-05-28 20:02
-
-Contribution: 2018-05-28 20:03
-
-Contribution: 2018-05-28 20:04
-
-Contribution: 2018-05-28 20:05
-
-Contribution: 2018-05-28 20:06
-
-Contribution: 2018-05-28 20:07
-
-Contribution: 2018-05-28 20:08
-
-Contribution: 2018-05-28 20:09
-
-Contribution: 2018-05-28 20:10
-
-Contribution: 2018-06-02 20:00
-
-Contribution: 2018-06-02 20:01
-
-Contribution: 2018-06-02 20:02
-
-Contribution: 2018-06-02 20:03
-
-Contribution: 2018-06-02 20:04
-
-Contribution: 2018-06-03 20:00
-
-Contribution: 2018-06-03 20:01
-
-Contribution: 2018-06-03 20:02
-
-Contribution: 2018-06-03 20:03
-
-Contribution: 2018-06-03 20:04
-
-Contribution: 2018-06-03 20:05
-
-Contribution: 2018-06-03 20:06
-
-Contribution: 2018-06-03 20:07
-
-Contribution: 2018-06-03 20:08
-
-Contribution: 2018-06-03 20:09
-
-Contribution: 2018-06-03 20:10
-
-Contribution: 2018-06-04 20:00
-
-Contribution: 2018-06-04 20:01
-
-Contribution: 2018-06-04 20:02
-
-Contribution: 2018-06-04 20:03
-
-Contribution: 2018-06-04 20:04
-
-Contribution: 2018-06-04 20:05
-
-Contribution: 2018-06-05 20:00
-
-Contribution: 2018-06-11 20:00
-
-Contribution: 2018-06-11 20:01
-
-Contribution: 2018-06-11 20:02
-
-Contribution: 2018-06-14 20:00
-
-Contribution: 2018-06-14 20:01
-
-Contribution: 2018-06-14 20:02
-
+I don't use PeerJS (while the other two projects do) and I also host TURN and WebSocket servers myself (instead of relying on Firebase). Sometimes you may get connected to Google's STUN server (always if a TURN server is not provided in the configuration).
