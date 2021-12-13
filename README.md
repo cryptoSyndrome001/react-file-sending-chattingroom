@@ -1,28 +1,11 @@
 # filedrop-web
 
-Easy WebRTC file transfer. [CLI tool is available here.](https://github.com/mat-sz/droplol)
-
 <p align="center">
     <a href="https://drop.lol/">
         <strong>Click here to open drop.lol.</strong>
     </a>
 </p>
 
-<p align="center">
-    <a href="https://drop.lol/">
-        <img src="https://raw.githubusercontent.com/mat-sz/filedrop-web/master/filedrop.gif" alt="Screenshot">
-    </a>
-</p>
-
-## Self-hosting
-
-A docker-compose configuration is available in the [filedrop-docker](https://github.com/mat-sz/filedrop-docker) repository.
-
-Installation can be achieved without Docker as well:
-
-> First you need to clone, build and run [filedrop-ws](https://github.com/mat-sz/filedrop-ws) and a TURN server (like [coturn](https://github.com/coturn/coturn)), read the README in filedrop-ws for more information on configuration.
->
-> Then you need to clone this project, point it to the WebSockets backend (filedrop-ws) (in .env.local), build it and place it on some static file server (I use nginx for that). I also use nginx to proxy the back end through it. [Here's a guide on how to achieve that.](https://www.nginx.com/blog/websocket-nginx/)
 
 ### Environment variables
 
